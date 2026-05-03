@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Truck illustration for testing -->
+  <defs>
+    <linearGradient id="truckBodyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5a7f5a"/>
+      <stop offset="100%" style="stop-color:#3d5a3d"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Truck cab -->
+  <path d="M40 130 L50 130 L50 90 L60 60 L100 60 L110 90 L120 130 L180 130 L180 90 L190 50 L280 50 L290 90 L290 130 L200 130 
+           L200 160 L40 160 Z" 
+        fill="url(#truckBodyGradient)" stroke="#2d4a2d" stroke-width="2"/>
+  
+  <!-- Cargo area -->
+  <rect x="200" y="60" width="180" height="90" fill="#8B4513" stroke="#5D3A1A" stroke-width="2"/>
+  
+  <!-- Windows -->
+  <path d="M65 90 L100 65 L110 90 Z" fill="#87ceeb" stroke="#5a9fd4" stroke-width="1"/>
+  <path d="M195 85 L280 55 L280 90 Z" fill="#87ceeb" stroke="#5a9fd4" stroke-width="1"/>
+  
+  <!-- Wheels -->
+  <circle cx="85" cy="165" r="22" fill="#333" stroke="#222" stroke-width="3"/>
+  <circle cx="85" cy="165" r="12" fill="#666"/>
+  
+  <circle cx="160" cy="165" r="22" fill="#333" stroke="#222" stroke-width="3"/>
+  <circle cx="160" cy="165" r="12" fill="#666"/>
+  
+  <circle cx="250" cy="165" r="22" fill="#333" stroke="#222" stroke-width="3"/>
+  <circle cx="250" cy="165" r="12" fill="#666"/>
+  
+  <circle cx="340" cy="165" r="22" fill="#333" stroke="#222" stroke-width="3"/>
+  <circle cx="340" cy="165" r="12" fill="#666"/>
+</svg>

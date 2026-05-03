@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200">
+  <!-- Simple car illustration for testing -->
+  <defs>
+    <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90d9"/>
+      <stop offset="50%" style="stop-color:#2563aa"/>
+      <stop offset="100%" style="stop-color:#1d4e8a"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Car body -->
+  <path d="M50 120 L80 120 L90 90 L180 85 L220 50 L280 50 L300 85 L350 90 L360 120 L390 120 L390 140 L50 140 Z" 
+        fill="url(#bodyGradient)" stroke="#1a4a7a" stroke-width="2"/>
+  
+  <!-- Windows -->
+  <path d="M190 85 L225 55 L275 55 L300 85 Z" fill="#87ceeb" stroke="#5a9fd4" stroke-width="1"/>
+  
+  <!-- Wheels -->
+  <circle cx="100" cy="145" r="25" fill="#333" stroke="#222" stroke-width="3"/>
+  <circle cx="100" cy="145" r="15" fill="#666"/>
+  <circle cx="100" cy="145" r="5" fill="#333"/>
+  
+  <circle cx="330" cy="145" r="25" fill="#333" stroke="#222" stroke-width="3"/>
+  <circle cx="330" cy="145" r="15" fill="#666"/>
+  <circle cx="330" cy="145" r="5" fill="#333"/>
+  
+  <!-- Headlights -->
+  <ellipse cx="60" cy="125" rx="8" ry="5" fill="#ffeb3b"/>
+  <ellipse cx="375" cy="125" rx="8" ry="5" fill="#ffeb3b"/>
+</svg>
