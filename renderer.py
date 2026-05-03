@@ -32,8 +32,8 @@ class VehicleRenderer:
     MAX_DPI = 300
     
     # Visual enhancement defaults
-    SHADOW_OPACITY = 0.25
-    SHADOW_BLUR = 15
+    SHADOW_OPACITY = 0.45      # More visible shadow (was 0.25)
+    SHADOW_BLUR = 20           # Larger blur for softer shadow
     SHADOW_OFFSET = (8, 12)
     SHADOW_COLOR = (0, 0, 0)
     
@@ -103,7 +103,7 @@ class VehicleRenderer:
         Apply visual enhancements to make the vehicle look more polished and dimensional.
         
         Enhancements:
-        - Soft ground shadow
+        - Soft ground shadow (beneath vehicle)
         - Subtle edge enhancement
         - Controlled highlights
         """
@@ -111,19 +111,20 @@ class VehicleRenderer:
         if img.mode != 'RGBA':
             img = img.convert('RGBA')
         
-        # Create a copy for compositing
-        result = img.copy()
-        
-        # Convert to RGB for processing (without alpha)
-        rgb_img = img.convert('RGB')
-        
-        # 1. Apply subtle shadow beneath the vehicle
+        # 1. Create the shadow first
         shadow_img = self._create_ground_shadow(img)
         
-        # 2. Blend shadow with vehicle
-        result = Image.alpha_composite(shadow_img, result)
+        # 2. Paste shadow onto new canvas, then paste vehicle on top
+        # Create result canvas
+        result = Image.new('RGBA', img.size, (0, 0, 0, 0))
         
-        # 3. Apply subtle edge enhancement
+        # Paste shadow first
+        result.paste(shadow_img, (0, 0), shadow_img)
+        
+        # Then paste vehicle on top
+        result.paste(img, (0, 0), img)
+        
+        # 3. Apply subtle edge enhancement (contrast boost)
         result = self._apply_edge_enhancement(result)
         
         # 4. Apply subtle sharpening for crispness
@@ -196,13 +197,13 @@ class VehicleRenderer:
         # Convert to RGB for processing
         rgb = img.convert('RGB')
         
-        # Apply slight contrast enhancement
+        # Apply contrast enhancement (more visible)
         enhancer = ImageEnhance.Contrast(rgb)
-        rgb = enhancer.enhance(1.05)
+        rgb = enhancer.enhance(1.12)  # Was 1.05
         
-        # Apply slight sharpness
+        # Apply sharpness (more visible)
         enhancer = ImageEnhance.Sharpness(rgb)
-        rgb = enhancer.enhance(1.03)
+        rgb = enhancer.enhance(1.15)  # Was 1.03
         
         # Convert back to RGBA
         result = rgb.convert('RGBA')
